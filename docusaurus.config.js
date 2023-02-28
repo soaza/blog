@@ -63,17 +63,12 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
+          { to: "/", label: "Blog", position: "left" },
           {
             type: "doc",
             docId: "intro",
             position: "left",
             label: "Readings",
-          },
-          { to: "/", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
           },
         ],
       },
