@@ -31,6 +31,21 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "travels",
+        path: "travels",
+        routeBasePath: "travels",
+        sidebarPath: require.resolve("./sidebars.js"),
+        editUrl: "https://git.7wate.com/zhouzhongping/wiki/src/branch/master",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        breadcrumbs: false,
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -42,7 +57,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          routeBasePath: "/",
+          // routeBasePath: "/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -63,17 +78,27 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          { to: "/", label: "Blog", position: "left" },
+          {
+            to: "/blog",
+            label: "Blog",
+            position: "left",
+          },
           {
             type: "doc",
             docId: "intro",
             position: "left",
             label: "Readings",
           },
+          {
+            position: "left",
+            label: "Travels",
+            to: "/travels",
+          },
         ],
       },
       footer: {
         style: "dark",
+
         // links: [
         //   {
         //     title: "Docs",
