@@ -10,7 +10,9 @@ const HomePage = () => {
           textAlign: "center",
         }}
       >
-        <div style={{ fontSize: 30, fontWeight: 800 }}>Kim Guan's writings</div>
+        <div style={{ fontSize: 30, fontWeight: 800, margin: 30 }}>
+          Kim Guan's writings
+        </div>
 
         <svg
           style={{ width: "80%" }}

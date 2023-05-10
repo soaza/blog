@@ -5,4 +5,4 @@ sidebar_position: 1
 
 # Travels
 
-Travelling
+Documenting my travels here!
