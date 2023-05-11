@@ -6,7 +6,9 @@ export default function Figure({ src, caption }) {
   return (
     <figure style={{ border: "0px solid #888", padding: 20 }}>
       <img src={useBaseUrl(src)} alt={caption} />
-      <figcaption style={{ textAlign: "center" }}>{`${caption}`}</figcaption>
+      <figcaption
+        style={{ textAlign: "center", color: "gray" }}
+      >{`${caption}`}</figcaption>
     </figure>
   );
 }
