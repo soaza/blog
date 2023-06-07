@@ -33,6 +33,23 @@ const config = {
   },
   plugins: [
     [
+      "docusaurus2-dotenv",
+      {
+        systemvars: true,
+      },
+    ],
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+    [
       "@docusaurus/plugin-content-docs",
       {
         id: "travels",
@@ -89,6 +106,11 @@ const config = {
             position: "left",
             label: "Travels",
             to: "/travels",
+          },
+          {
+            position: "left",
+            label: "Movies",
+            to: "/movies",
           },
         ],
       },
