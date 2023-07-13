@@ -11,6 +11,24 @@ Heres the [link](https://youtu.be/CLkxRnRQtDE) to the keynote.
 
 ## Tailwind with Modern CSS
 
+[Sam Selikoff](https://samselikoff.com/) spoke on modern CSS pseudo-classes and its (future) implementations in Tailwind which I felt was very helpful!
+
+### Accent colors
+
+Many times when we attempt to change the color of checkboxes or radio groups we attempt to use background color property and find out that it doesn't work. This is where accent colors come in, its changes accented color of a form control.
+
+```jsx
+<label>
+  <input type="checkbox" checked> Browser default
+</label>
+<label>
+  <input type="checkbox" class="accent-pink-500" checked> Customized
+</label>
+```
+
+We get this:
+<img src="https://res.cloudinary.com/ds94rr8md/image/upload/v1688914102/portfolio/nf6meczoq2iog1kn5vkv.png"/>
+
 ### `first` and `last` pseudo-class
 
 Imagine that you have a grid display of cards to show on your page, but you want the additional logic of being able to have the first and and last cards to take up 2/3rd and 1 whole of the grid row respectively, something like this:
@@ -51,10 +69,12 @@ We can actually shorten our code using css pseudo-classes `first` and `last` whi
 
 ```jsx
 export const test2 = () => {
+  const ARRAY_LENGTH = 6;
+
   return (
     <div className="flex justify-center items-center p-4">
       <div className="grid grid-cols-3 gap-4">
-        {[...Array(10)].map((_, index) => (
+        {[...Array(ARRAY_LENGTH)].map((_, index) => (
           <div
             className={`h-80 aspect-square rounded-md bg-slate-300
             first:col-span-2 last:col-span-3 w-full text-center`}
@@ -67,3 +87,28 @@ export const test2 = () => {
   );
 };
 ```
+
+### `even` and `odd` pseudo-class
+
+Similar to the above, what if we wanted to apply conditional logic based on even/odd child? We can use `even` and `odd` pseudo-classes:
+
+```jsx
+const FRUITS = ["apple", "orange", "pear", "pineapple", "durian"];
+
+return (
+  <div className="flex flex-col h-screen items-center justify-center border-black border-2 w-1/4 place-self-center">
+    {FRUITS.map((fruit) => (
+      <div className="flex items-center mb-4 rounded-md border border-slate-300 border-solid p-4 even:bg-slate-300 w-full">
+        {fruit}
+      </div>
+    ))}
+  </div>
+);
+```
+
+And this is the result:
+<img src="https://res.cloudinary.com/ds94rr8md/image/upload/v1688913757/portfolio/vjugrkbl2w2gubuguom0.png"/>
+
+### `@container` queries
+
+<i>To be continued when Tailwind release support officially.</i>
