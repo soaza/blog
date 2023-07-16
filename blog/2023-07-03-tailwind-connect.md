@@ -112,3 +112,67 @@ And this is the result:
 ### `@container` queries
 
 <i>To be continued when Tailwind release support officially.</i>
+
+## Oxide
+
+Adam spoke about Oxide, which is v3.4 of Tailwind. Currently, experimental, many updates in this upcoming release which is quite exciting and massive improvements to the tailwind development experience.
+
+### Improved performance
+
+The parsing layer of tailwind which looks at all the HTML,JSX files and fine usage of Tailwind CSS classes and generates all the CSS is a parallelizable task which can be split across all the cores of the PC.
+
+The new oxide engine reduces the compile time by almost two-fold.
+
+### Simplified Configuration
+
+QOL improvement: Simply importing tailwind css.
+
+From this:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+To:
+
+```css
+@import "tailwindcss";
+```
+
+### Migrating CSS configs into CSS
+
+Currently, tailwind manages all the themes-related CSS in tailwind.config.js.
+
+For example, for fonts:
+
+```js
+ theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter","sans-serif"],
+        display:["Satoshi","sans-serif"],
+      }
+    },
+ }
+```
+
+In Oxide, we can remove this and migrate it onto the global css file:
+
+```css
+:theme {
+  --font-family-sans: "Inter", "sans-serif";
+  --font-family-display: "Satoshi", "sans-serif";
+}
+```
+
+## Catalyst, React UI kit for Tailwind
+
+Catalyst, a headless React UI was introduced which is a scaffolded boilerplate UI kit, similar to shadcn/ui. It gives dev more control over the UI components and customisation.
+
+Won't cover it further in this post until it has been released officially very exciting for it as it integrates the best design frameworks from native designs.
+
+## Thanks for reading!
+
+I am a big fan of tailwindCSS and it has really made me a better front-end developer and improved my mastery of CSS. Hopefully, I get to attend a conference which features a tailwind keynote one day :D
