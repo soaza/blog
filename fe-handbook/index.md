@@ -1,9 +1,11 @@
 ---
-slug: front-end-guide
-title: Front-End Guide
+slug: /
+title: Learning Front-End
 authors: [kg]
 tags: [front-end]
 ---
+
+Just my documentation on all the front-end concepts I have came across as a developer.
 
 ## Javascript
 

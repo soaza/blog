@@ -58,6 +58,15 @@ const config = {
         sidebarPath: require.resolve("./sidebars.js"),
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "fe-handbook",
+        path: "fe-handbook",
+        routeBasePath: "fe-handbook",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
   ],
 
   presets: [
@@ -101,6 +110,11 @@ const config = {
             docId: "intro",
             position: "left",
             label: "Readings",
+          },
+          {
+            position: "left",
+            label: "Learning Front-End",
+            to: "/fe-handbook",
           },
           {
             position: "left",
