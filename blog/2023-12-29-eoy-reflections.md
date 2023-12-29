@@ -27,7 +27,7 @@ Do see whats wrong with this line of code?
 <>{rows.length && rows.map((row) => <Row />)}</>
 ```
 
-When rows is evaluated as an empty array(`[]`), rows.length evaluates to 0 and in React, 0 is not ignored [on render]("https://legacy.reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored"), which causes the component to render "0" as opposed to not evaluating the JSX.
+When rows is evaluated as an empty array(`[]`), rows.length evaluates to 0 and in React, 0 is not ignored [on render](https://legacy.reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored), which causes the component to render "0" as opposed to not evaluating the JSX.
 
 An alternative approach:
 
@@ -99,7 +99,7 @@ When I first joined, the deployment infrastructure a massive headache to work wi
 
 The issues was mainly due to the fact that we worked with a monolithic codebase with over 30+ developers working on the same repository, as such, every time someone merge into master, the person deploying / getting approvals for their code review would have to rebase and restart the process. This was a nightmare to work with and made people dread deployment due to having to rebase several times and ensure their build passes.
 
-A few months in, we switched to a [trunk-based approach]("https://trunkbaseddevelopment.com/") which made the deployment process so much faster and efficient. Once the code review is done and following QA approval, our code can be merged within the build time (~10mins) and deployment would be done later on rather than Code Merge -> Deployment. The window for merge conflicts and possibility of having to rebase on each other's merges was reduced greatly and overall the deployment process was just that much more optimal to work with.
+A few months in, we switched to a [trunk-based approach](https://trunkbaseddevelopment.com/) which made the deployment process so much faster and efficient. Once the code review is done and following QA approval, our code can be merged within the build time (~10mins) and deployment would be done later on rather than Code Merge -> Deployment. The window for merge conflicts and possibility of having to rebase on each other's merges was reduced greatly and overall the deployment process was just that much more optimal to work with.
 
 ## Imposter Syndrome is real
 
