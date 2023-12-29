@@ -62,7 +62,7 @@ const handleComplexFields = ({url,body,users,isEditable}:
 {url: string, body: string, users: Users[], isEditable: boolean}) => {...}
 ```
 
-This ensures that our input parameters are mapped correct and also allow us to introduce optional parameters done the road without refactoring the entire function.
+This ensures that our input parameters are mapped correctly and also allow us to introduce optional parameters done the road without refactoring the entire function.
 
 ```ts
 const handleField = (body?: FormBody, optional: boolean) => {...}
@@ -87,7 +87,7 @@ These are the people that I work with on a day-to-day basis:
 
 :::
 
-More often and not the person you are communicating might not know the issue that you might be facing.
+More often than not, the person you are communicating might not know the issue that you might be facing.
 
 For example, it's probably not a good idea to tell your product manager that supporting dark mode would not be possible in this requirement because you guys are using CSS-in-JS solution such as styled components to write CSS. It might be better to let them know that "this would require a decent amount of effort from the front-end side as our current solution does not have an optimal way of handling this right now".
 
