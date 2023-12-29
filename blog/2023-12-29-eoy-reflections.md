@@ -21,13 +21,13 @@ Over the past 6 months, my team has implemented proper Code Review practices and
 
 :::info
 
-Do see whats wrong with this line of code?
+Do you see whats wrong with this line of code?
 
 ```tsx
 <>{rows.length && rows.map((row) => <Row />)}</>
 ```
 
-When rows is evaluated as an empty array(`[]`), rows.length evaluates to 0 and in React, 0 is not ignored [on render](https://legacy.reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored), which causes the component to render "0" as opposed to not evaluating the JSX.
+When `rows` is evaluated as an empty array(`[]`), `rows.length` evaluates to `0` and in React, `0` is not ignored [on render](https://legacy.reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored), which causes the component to render "0" as opposed to not evaluating the JSX.
 
 An alternative approach:
 
